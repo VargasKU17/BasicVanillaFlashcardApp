@@ -27,14 +27,11 @@ let chinese = randomQuizwords.map((x)=> x.Chinese)
 let pinyin = randomQuizwords.map((x)=> x.Pinyin)
 let english = randomQuizwords.map((x)=> x.English)
 //general function for interating through an array by event with a final value of an empty string
-function iterateByEvent(arrayIt){
-  let x
-  let tempValue = [];
+function iterateByEvent(array){
+  let x = -1
   return function(){
-    for (let i = 0; i <= tempValue.length; i++)
-      x = arrayIt[tempValue.length];
-    tempValue.length < arrayIt.length ? tempValue.push("hi") : x= "";
-    return x;
+    x+=1
+    return x < array.length? array[x]: ''
   }
 }
 //SIDE-EFFECTS START HERE
