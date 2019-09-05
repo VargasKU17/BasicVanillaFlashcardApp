@@ -7,7 +7,8 @@ let allWordsStatus = false
 //creates and destoys a copy of an array, then randomizes order of the copy
 function equivalentExchangeRandomize(array){
   let newArray = []
-  let copy = array.slice()
+  // let copy = array.slice()
+  let copy = [...array]
   for (let i = copy.length; 0 < copy.length; i--)
     newArray.push(copy.splice(Math.floor(Math.random()*copy.length),1))
   return newArray
@@ -31,7 +32,7 @@ function iterateByEvent(array){
   let x = -1
   return function(){
     x+=1
-    return x < array.length? array[x]: ''
+    return x<array.length? array[x]: ''
   }
 }
 //SIDE-EFFECTS START HERE
